@@ -10,7 +10,7 @@ import { HiUserGroup } from "react-icons/hi";
 const NavBar = () => {
   return (
     <div className="w-11/12 mx-auto">
-      <div className="drop-shadow-2x sm:flex justify-between items-center hidden">
+      <div className="drop-shadow-2x sm:flex justify-between items-center hidden pt-2">
         <div className="left">
           <span className="text-2xl font-semibold text-primary">ChitChat.</span>
         </div>
