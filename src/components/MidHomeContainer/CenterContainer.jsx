@@ -1,6 +1,6 @@
 import React from 'react';
 import CreatePost from './CreatePost';
-import FriendsPost from './FriendsPost';
+import FriendsPost from './FriendsPost/FriendsPost';
 
 const CenterContainer = () => {
     return (

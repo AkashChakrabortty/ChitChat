@@ -1,6 +1,6 @@
 import React from "react";
 
-const LeftContainer = () => {
+const ChitChatUsers = () => {
   return (
     <div className="w-1/4">
         <h1 className="text-center font-semibold m-2">ChitChat Users</h1>
@@ -25,4 +25,4 @@ const LeftContainer = () => {
   );
 };
 
-export default LeftContainer;
+export default ChitChatUsers;

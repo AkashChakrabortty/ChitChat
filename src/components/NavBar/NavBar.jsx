@@ -10,17 +10,17 @@ import { HiUserGroup } from "react-icons/hi";
 const NavBar = () => {
   return (
     <div className="w-11/12 mx-auto">
-      <div className="drop-shadow-2x sm:flex justify-between items-center hidden pt-2">
+      <div className=" sm:flex justify-between items-center hidden bg-white drop-shadow-2xl rounded-lg p-2">
         <div className="left">
-          <span className="text-2xl font-semibold text-primary">ChitChat.</span>
+          <span className="text-2xl font-semibold" style={{color: '#1877F2'}}>ChitChat.</span>
         </div>
-        <div className="center flex items-center">
+        <div className="center flex items-center bg-base-200">
           <div className="form-control">
-            <div className="flex items-center border rounded-full">
+            <div className="flex items-center border rounded-lg ">
               <div className="icon ml-2">
                 <AiOutlineSearch />
               </div>
-              <div className="in bg-base-200">
+              <div className="in">
                 <input
                   type="text"
                   placeholder="Search ChitChat"
@@ -44,32 +44,33 @@ const NavBar = () => {
         </div>
       </div>
       {/* mobile responsive */}
-      <div className="sm:hidden">
+      <div className="sm:hidden bg-white drop-shadow-2xl rounded-lg p-2">
         <div className="upperNav flex items-center justify-between p-2">
           <div className="logo">
             {" "}
-            <span className="text-2xl font-semibold text-primary">
+            <span className="text-2xl font-semibold text-primary" style={{color: '#1877F2'}}>
               ChitChat.
             </span>
           </div>
-          <div className="searchBox h-10 w-1/2 border rounded-full p-2">
-            <div className="form-control -mt-2">
+          <div className="searchBox h-10 w-1/2 border rounded-lg bg-base-200 p-2 overflow-hidden">
+            <div className="form-control -mt-3">
               <div className="flex items-center">
                 <div className="icon ml-2">
                   <AiOutlineSearch />
                 </div>
-                <div className="in bg-base-200 w-full">
+                <div className="in w-full">
                   <input
                     type="text"
                     placeholder="Search ChitChat"
-                    className="input focus:outline-none bg-base-200 w-full"
+                    className="input focus:outline-none w-full bg-base-200"
                   />
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="mainNav flex text-2xl justify-between items-center">
+        <hr />
+        <div className="mainNav flex text-2xl justify-between items-center mt-2 p-2">
             <div className="home">
                 <AiOutlineHome />
             </div>

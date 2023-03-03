@@ -1,6 +1,6 @@
 import React from "react";
-import { AiFillLike } from 'react-icons/ai';
-import { BiComment } from 'react-icons/bi';
+import Comment from "./Comment/Comment";
+import Like from "./Like/Like";
 
 
 const FriendsPost = () => {
@@ -24,12 +24,8 @@ const FriendsPost = () => {
       <img src="https://i.ibb.co/JkzvDHc/akash-2.png" className="w-full"/>
       </div>
       <div className="reaction flex gap-5 p-2 mt-2">
-        <div className="like flex gap-1 items-center text-xl">
-        <AiFillLike /> Like
-        </div>
-        <div className="comment flex gap-1 items-center text-xl">
-        <BiComment /> Comment
-        </div>
+       <Like />
+       <Comment />
       </div>
       <hr />
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const RightContainer = () => {
+const FriendRequests = () => {
   return (
     <div className="w-1/4">
       <h1 className="text-center font-semibold m-2">Friend request</h1>
@@ -42,4 +42,4 @@ const RightContainer = () => {
   );
 };
 
-export default RightContainer;
+export default FriendRequests;
