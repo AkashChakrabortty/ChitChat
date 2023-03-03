@@ -4,7 +4,7 @@ import FriendsPost from './FriendsPost/FriendsPost';
 
 const CenterContainer = () => {
     return (
-        <div className='w-1/2 mt-3'>
+        <div className='sm:w-1/2 w-full mt-3'>
          <CreatePost></CreatePost>
          <FriendsPost></FriendsPost>
         </div>
