@@ -25,7 +25,7 @@ const BottomNav = () => {
         {
             id: 4,
             icon:  <HiUserGroup />,
-            link: '/chitChatUsers'
+            link: '/home/chitChatUsers'
         },
         {
             id: 5,

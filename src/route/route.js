@@ -1,5 +1,6 @@
 import { createBrowserRouter, Outlet } from "react-router-dom";
 import ChitChatUsers from "../components/MidHomeContainer/ChitChatUsers.jsx";
+import MidHomeContainer from "../components/MidHomeContainer/MidHomeContainer.jsx";
 import NavBar from "../components/NavBar/NavBar.jsx";
 import HomePage from "../pages/HomePage/HomePage.jsx";
 import Login from '../pages/Login/Login.jsx'
@@ -16,10 +17,17 @@ const route = createBrowserRouter([
     {
         path: '/home',
         element: <HomePage></HomePage>,
+        children: [
+            {
+                path: '/home',
+                element: <MidHomeContainer></MidHomeContainer>,
+            },
+            {
+                path: '/home/chitChatUsers',
+                element: <ChitChatUsers></ChitChatUsers>,
+            },
+        ]
     },
-    {
-        path: '/chitChatUsers',
-        element: <ChitChatUsers></ChitChatUsers>,
-    }
+    
 ])
 export default route;
