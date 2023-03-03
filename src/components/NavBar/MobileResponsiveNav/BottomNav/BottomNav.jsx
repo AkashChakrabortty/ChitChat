@@ -15,12 +15,12 @@ const BottomNav = () => {
         {
             id: 2,
             icon: <BsChatDots />,
-            link: '/chats'
+            link: '/home/chats'
         },
         {
             id: 3,
             icon: <IoMan />,
-            link: '/friendRequest'
+            link: '/home/friendRequest'
         },
         {
             id: 4,

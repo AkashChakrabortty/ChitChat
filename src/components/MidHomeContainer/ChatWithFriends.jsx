@@ -1,9 +1,9 @@
 import React from "react";
 
-const FriendRequests = () => {
+const ChatWithFriends = () => {
   return (
-    <div className="sm:w-full w-1/2 mx-auto">
-      <h1 className="text-center font-semibold m-2">Friend request</h1>
+    <div className=" w-1/2 sm:w-1/4 mx-auto">
+      <h1 className="text-center font-semibold m-2">Chat With Friends</h1>
       <div className="users w-11/12 mx-auto border bg-white drop-shadow-2xl p-2 rounded-md">
         <div className="top w-11/12 mx-auto flex gap-2">
           <div className="img">
@@ -17,13 +17,9 @@ const FriendRequests = () => {
             <span className="font-semibold">Akash Chakrabortty</span>
           </div>
         </div>
-        <div className="footerBtn flex gap-2 w-11/12 mx-auto">
-          <button className="btn-default">Confrim</button>
-          <button className="btn-default">Delete</button>
-        </div>
       </div>
     </div>
   );
 };
 
-export default FriendRequests;
+export default ChatWithFriends;

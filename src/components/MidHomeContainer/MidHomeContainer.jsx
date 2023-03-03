@@ -1,14 +1,14 @@
 import React from "react";
 import ChitChatUsers from "./ChitChatUsers";
 import CenterContainer from "./CenterContainer";
-import FriendRequests from "./FriendRequests";
+import RightContainer from "./RightContainer";
 const MidHomeContainer = () => {
   return (
     <div>
       <div className="hidden sm:flex w-11/12 mx-auto justify-center gap-5">
         <ChitChatUsers></ChitChatUsers>
         <CenterContainer></CenterContainer>
-        <FriendRequests></FriendRequests>
+        <RightContainer></RightContainer>
       </div>
       {/* Mobile View */}
       <div className="w-11/12 mx-auto justify-center sm:hidden">
