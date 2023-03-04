@@ -1,6 +1,6 @@
 import React from 'react';
-import ChitChatUsers from './ChitChatUsers';
-import LinkRoutes from './LinkRoutes';
+import ChitChatUsers from '../../../../SharedComponents/ChitChatUsers/ChitChatUsers';
+import LinkRoutes from '../../LinkRoutes/LinkRoutes';
 
 const LeftContainer = () => {
     return (

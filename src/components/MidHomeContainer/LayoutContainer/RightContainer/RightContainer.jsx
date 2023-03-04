@@ -1,6 +1,6 @@
 import React from 'react';
-import ChatWithFriends from './ChatWithFriends';
-import FriendRequests from './FriendRequests';
+import ChatWithFriends from '../../../../SharedComponents/ChatWithFriends/ChatWithFriends';
+import FriendRequests from '../../../../SharedComponents/FriendRequests/FriendRequests';
 
 const RightContainer = () => {
     return (

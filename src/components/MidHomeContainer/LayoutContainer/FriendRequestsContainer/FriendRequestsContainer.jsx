@@ -1,5 +1,5 @@
 import React from 'react';
-import FriendRequests from './FriendRequests';
+import FriendRequests from '../../../../SharedComponents/FriendRequests/FriendRequests';
 
 const FriendRequestsContainer = () => {
     return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import ChatWithFriends from './ChatWithFriends';
+import ChatWithFriends from '../../../../SharedComponents/ChatWithFriends/ChatWithFriends';
 
 const ChatContainer = () => {
     return (

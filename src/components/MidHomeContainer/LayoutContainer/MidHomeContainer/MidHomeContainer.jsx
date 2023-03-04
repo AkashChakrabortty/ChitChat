@@ -1,7 +1,8 @@
 import React from "react";
-import CenterContainer from "./CenterContainer";
-import RightContainer from "./RightContainer";
-import LeftContainer from "./LeftContainer";
+import CenterContainer from '../CenterContainer/CenterContainer'
+import RightContainer from '../RightContainer/RightContainer'
+import LeftContainer from '../LeftContainer/LeftContainer'
+
 const MidHomeContainer = () => {
   return (
     <div>

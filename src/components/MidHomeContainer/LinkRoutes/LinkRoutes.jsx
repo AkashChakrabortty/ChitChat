@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { linkData } from '../../fakeData/linkData/linkData';
+import { linkData } from '../../../fakeData/linkData/linkData';
 
 const LinkRoutes = () => {
     return (

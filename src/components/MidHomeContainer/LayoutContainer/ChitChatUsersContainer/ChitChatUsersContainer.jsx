@@ -1,5 +1,5 @@
 import React from 'react';
-import ChitChatUsers from './ChitChatUsers';
+import ChitChatUsers from '../../../../SharedComponents/ChitChatUsers/ChitChatUsers';
 
 const ChitChatUsersContainer = () => {
     return (

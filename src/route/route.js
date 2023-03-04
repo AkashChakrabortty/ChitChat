@@ -1,14 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
-import ChatContainer from "../components/MidHomeContainer/ChatContainer.jsx";
-import ChatWithFriends from "../components/MidHomeContainer/ChatWithFriends.jsx";
-import ChitChatUsers from "../components/MidHomeContainer/ChitChatUsers.jsx";
-import ChitChatUsersContainer from "../components/MidHomeContainer/ChitChatUsersContainer.jsx";
-import FriendRequests from "../components/MidHomeContainer/FriendRequests.jsx";
-import FriendRequestsContainer from "../components/MidHomeContainer/FriendRequestsContainer.jsx";
-import MidHomeContainer from "../components/MidHomeContainer/MidHomeContainer.jsx";
 import HomePage from "../pages/HomePage/HomePage.jsx";
 import Login from '../pages/Login/Login.jsx'
 import Register from '../pages/Register/Register.jsx'
+import ChatContainer from '../components/MidHomeContainer/LayoutContainer/ChatContainer/ChatContainer.jsx'
+import ChitChatUsersContainer from '../components/MidHomeContainer/LayoutContainer/ChitChatUsersContainer/ChitChatUsersContainer.jsx'
+import FriendRequestsContainer from '../components/MidHomeContainer/LayoutContainer/FriendRequestsContainer/FriendRequestsContainer.jsx'
+import MidHomeContainer from '../components/MidHomeContainer/LayoutContainer/MidHomeContainer/MidHomeContainer.jsx'
+
 const route = createBrowserRouter([
     {
         path: '/',
