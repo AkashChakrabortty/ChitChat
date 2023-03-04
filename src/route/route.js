@@ -6,6 +6,8 @@ import ChatContainer from '../components/MidHomeContainer/LayoutContainer/ChatCo
 import ChitChatUsersContainer from '../components/MidHomeContainer/LayoutContainer/ChitChatUsersContainer/ChitChatUsersContainer.jsx'
 import FriendRequestsContainer from '../components/MidHomeContainer/LayoutContainer/FriendRequestsContainer/FriendRequestsContainer.jsx'
 import MidHomeContainer from '../components/MidHomeContainer/LayoutContainer/MidHomeContainer/MidHomeContainer.jsx'
+import ProfilePage from "../pages/ProfilePage/ProfilePage.jsx";
+import MidProfileContainer from "../components/MidProfileContainer/LayoutContainer/MidProfileContainer/MidProfileContainer.jsx";
 
 const route = createBrowserRouter([
     {
@@ -38,6 +40,15 @@ const route = createBrowserRouter([
             },
         ]
     },
-    
+    {
+        path: '/profile',
+        element: <ProfilePage></ProfilePage>,
+        children: [
+            {
+                path: '/profile',
+                element: <MidProfileContainer></MidProfileContainer>
+            }
+        ]
+    },
 ])
 export default route;

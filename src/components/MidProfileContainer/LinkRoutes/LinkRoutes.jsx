@@ -1,11 +1,11 @@
 import React from 'react';
-import { homeLinkData } from '../../../fakeData/homeLinkData/homeLinkData';
+import { profileLinkData } from '../../../fakeData/profileLinkData/profileLinkData';
 import ShareLinkRoutes from '../../../SharedComponents/ShareLinkRoutes/ShareLinkRoutes';
 
 const LinkRoutes = () => {
     return (
         <div>
-          <ShareLinkRoutes data={{data: homeLinkData}}/>
+       <ShareLinkRoutes data={{data: profileLinkData}}/>
         </div>
     );
 };

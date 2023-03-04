@@ -3,8 +3,10 @@ import { BsChatDots } from "react-icons/bs";
 import { IoMan } from 'react-icons/io5';
 import { HiUserGroup } from "react-icons/hi";
 import { GrNotification } from "react-icons/gr";
+import { MdManageAccounts } from "react-icons/md";
 
-export const linkData = [
+
+export const homeLinkData = [
     {
         id: 1,
         icon: <AiOutlineHome />,
@@ -34,5 +36,12 @@ export const linkData = [
         icon:  <GrNotification />,
         link: '/notifications',
         name: 'Notifications'
+    },
+    {
+        id: 6,
+        icon:  <MdManageAccounts />,
+        link: '/profile',
+        name: 'Profile'
     }
 ]
+
