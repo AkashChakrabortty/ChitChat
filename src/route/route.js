@@ -1,7 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
+import ChatContainer from "../components/MidHomeContainer/ChatContainer.jsx";
 import ChatWithFriends from "../components/MidHomeContainer/ChatWithFriends.jsx";
 import ChitChatUsers from "../components/MidHomeContainer/ChitChatUsers.jsx";
+import ChitChatUsersContainer from "../components/MidHomeContainer/ChitChatUsersContainer.jsx";
 import FriendRequests from "../components/MidHomeContainer/FriendRequests.jsx";
+import FriendRequestsContainer from "../components/MidHomeContainer/FriendRequestsContainer.jsx";
 import MidHomeContainer from "../components/MidHomeContainer/MidHomeContainer.jsx";
 import HomePage from "../pages/HomePage/HomePage.jsx";
 import Login from '../pages/Login/Login.jsx'
@@ -25,15 +28,15 @@ const route = createBrowserRouter([
             },
             {
                 path: '/home/chitChatUsers',
-                element: <ChitChatUsers></ChitChatUsers>,
+                element: <ChitChatUsersContainer></ChitChatUsersContainer>,
             },
             {
                 path: '/home/friendRequest',
-                element: <FriendRequests></FriendRequests>,
+                element: <FriendRequestsContainer></FriendRequestsContainer>,
             },
             {
                 path: '/home/chats',
-                element: <ChatWithFriends></ChatWithFriends>,
+                element: <ChatContainer></ChatContainer>,
             },
         ]
     },

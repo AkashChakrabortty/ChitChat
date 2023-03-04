@@ -1,5 +1,6 @@
 import React from 'react';
 import { AiOutlineSearch } from "react-icons/ai";
+import { Link } from 'react-router-dom';
 import BottomNav from './BottomNav/BottomNav';
 
 const MobileResponsiveNav = () => {
@@ -7,10 +8,7 @@ const MobileResponsiveNav = () => {
         <div className="sm:hidden bg-white drop-shadow-2xl rounded-lg p-2">
         <div className="upperNav flex items-center justify-between p-2">
           <div className="logo">
-            {" "}
-            <span className="text-2xl font-semibold text-primary" style={{color: '#1877F2'}}>
-              ChitChat.
-            </span>
+          <Link to='/home' className="text-2xl font-semibold" style={{ color: "#1877F2" }}>ChitChat.</Link>
           </div>
           <div className="searchBox h-10 w-1/2 border rounded-lg bg-base-200 p-2 overflow-hidden">
             <div className="form-control -mt-3">

@@ -1,6 +1,7 @@
 import React from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { GrNotification } from "react-icons/gr";
+import { Link } from "react-router-dom";
 import PopOver from "../../SharedComponents/PopOver/PopOver";
 import MobileResponsiveNav from "./MobileResponsiveNav/MobileResponsiveNav";
 
@@ -11,9 +12,7 @@ const NavBar = () => {
     <div className="w-11/12 mx-auto">
       <div className=" sm:flex justify-between items-center hidden bg-white drop-shadow-2xl rounded-lg p-2">
         <div className="left">
-          <span className="text-2xl font-semibold" style={{ color: "#1877F2" }}>
-            ChitChat.
-          </span>
+          <Link to='/home' className="text-2xl font-semibold" style={{ color: "#1877F2" }}>ChitChat.</Link>
         </div>
         <div className="center flex items-center bg-base-200">
           <div className="form-control">

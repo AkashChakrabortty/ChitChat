@@ -1,12 +1,12 @@
 import React from "react";
-import ChitChatUsers from "./ChitChatUsers";
 import CenterContainer from "./CenterContainer";
 import RightContainer from "./RightContainer";
+import LeftContainer from "./LeftContainer";
 const MidHomeContainer = () => {
   return (
     <div>
       <div className="hidden sm:flex w-11/12 mx-auto justify-center gap-5">
-        <ChitChatUsers></ChitChatUsers>
+        <LeftContainer></LeftContainer>
         <CenterContainer></CenterContainer>
         <RightContainer></RightContainer>
       </div>
