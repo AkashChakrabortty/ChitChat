@@ -1,12 +1,12 @@
 import React from 'react';
-import ChatWithFriends from '../../../../SharedComponents/ChatWithFriends/ChatWithFriends';
-import FriendRequests from '../../../../SharedComponents/FriendRequests/FriendRequests';
+import PostDisplay from '../../../../SharedComponents/PostDisplay/PostDisplay';
+import UserPhoto from '../../UserPhoto/UserPhoto';
 
-const RightContainer = () => {
+const  RightContainer = () => {
     return (
         <div className='w-3/5'>
-        <FriendRequests></FriendRequests>
-        <ChatWithFriends></ChatWithFriends>
+        <UserPhoto></UserPhoto>
+        <PostDisplay></PostDisplay>
         </div>
     );
 };
