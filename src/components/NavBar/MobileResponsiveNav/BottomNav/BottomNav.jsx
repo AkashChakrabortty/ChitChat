@@ -5,6 +5,7 @@ import { IoMan } from 'react-icons/io5';
 import { HiUserGroup } from "react-icons/hi";
 import {Link} from 'react-router-dom'
 import { GrNotification } from "react-icons/gr";
+import PopOver from '../../../../SharedComponents/PopOver/PopOver';
 const BottomNav = () => {
     const bottomData = [
         {
@@ -34,23 +35,17 @@ const BottomNav = () => {
         }
     ]
     return (
-        <div className="mainNav flex text-2xl justify-between items-center mt-2 p-2">
+        <div className="mainNav flex justify-between items-center mt-2 p-2">
             {
                 bottomData.map((value,index)=>{
                     return  <div key={index}>
-                    <Link to={value.link}>
+                    <Link to={value.link} className='text-2xl'>
                      {value.icon}
                     </Link>
                   </div>
                 })
             }
-            <div className="img">
-            <div className="avatar">
-              <div className="w-12 rounded-full">
-                <img src="https://i.ibb.co/JkzvDHc/akash-2.png" />
-              </div>
-            </div>
-            </div>
+            <PopOver />
         </div>
     );
 };

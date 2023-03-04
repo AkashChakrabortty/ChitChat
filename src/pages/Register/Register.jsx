@@ -22,7 +22,7 @@ const Register = () => {
               />
             </div>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 p-2">
             <div className="card-body">
                 {
                     inputData?.map((value,index)=>{
@@ -44,7 +44,7 @@ const Register = () => {
                 }
               
               <div className="form-control mt-2">
-                <button className="btn btn-outline btn-primary">
+                <button className="btn-default">
                   Register
                 </button>
               </div>

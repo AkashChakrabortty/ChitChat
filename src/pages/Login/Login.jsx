@@ -16,7 +16,7 @@ const Login = () => {
             </div>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <div className="card-body p-10">
+            <div className="card-body p-12">
             {
                     inputData?.map((value,index)=>{
                         return    <div className="form-control" key={index}>
@@ -43,7 +43,7 @@ const Login = () => {
               </Link>
                 </label>
               <div className="form-control mt-2">
-              <button className="btn btn-outline btn-primary">Login</button>
+              <button className="btn-default">Login</button>
                
               </div>
               <div className="mt-2 text-center">
