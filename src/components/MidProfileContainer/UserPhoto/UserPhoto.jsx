@@ -13,7 +13,7 @@ const UserPhoto = () => {
         </div>
         <div className="profile text-center">
           <div className="avatar -mt-16">
-            <div className="w-24 rounded-full ring ring-blue-600 ring-offset-base-100 ring-offset-2">
+            <div className="w-24 rounded-full ring ring-blue-400 ring-offset-base-100 ring-offset-2">
               <img src="https://i.ibb.co/JkzvDHc/akash-2.png" alt="Akash" />
             </div>
           </div>

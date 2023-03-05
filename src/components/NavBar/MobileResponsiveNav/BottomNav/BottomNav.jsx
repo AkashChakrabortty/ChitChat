@@ -1,20 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { homeLinkData } from '../../../../fakeData/homeLinkData/homeLinkData';
+import MobileIconNav from '../../../../SharedComponents/MobileIconNav/MobileIconNav';
 import PopOver from '../../../../SharedComponents/PopOver/PopOver';
 const BottomNav = () => {
     return (
-        <div className="mainNav flex justify-between items-center mt-2 p-2">
-            {
-                homeLinkData.map((value,index)=>{
-                    return  <div  className='text-2xl' key={index}>
-                    <Link to={value.link}>
-                     {value.icon}
-                    </Link>
-                  </div>
-                })
-            }
+        <div className='flex justify-between mt-2'>
+            <div className="icon w-10/12">
+            <MobileIconNav data={{data: homeLinkData}}/>
+            </div>
+            <div className="popOver flex items-center">
             <PopOver />
+            </div>
         </div>
     );
 };
