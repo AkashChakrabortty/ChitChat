@@ -12,6 +12,7 @@ export const UserInfo = createContext();
 const AuthProvider = ({ children }) => {
   const auth = getAuth(app);
   const [user, setUser] = useState({});
+  const [isLoginLoading,setIsLoginLoading] = useState(false)
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
@@ -22,6 +23,7 @@ const AuthProvider = ({ children }) => {
         // Signed in
         const user = userCredential.user;
         setUser(user);
+        setIsLoginLoading(false)
       })
       .catch(() => {
         alert("login failed!");
@@ -50,6 +52,8 @@ const AuthProvider = ({ children }) => {
     createUser,
     LogIn,
     logout,
+    isLoginLoading,
+    setIsLoginLoading
   };
   return <UserInfo.Provider value={authInfo}>{children}</UserInfo.Provider>;
 };

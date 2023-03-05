@@ -1,12 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { inputData } from "../../fakeData/inputData/inputData";
+import { useStoreUserInfoMutation } from "../../features/api/apiSlice";
 import { UserInfo } from "../../UserContext/AuthProvider";
 import registerAnimation from "./107385-reg.gif";
 
 const Register = () => {
   const { createUser , setUser , user} = useContext(UserInfo);
   const navigate = useNavigate();
+  const [storeUser,{isLoading }] = useStoreUserInfoMutation()
+  console.log(isLoading)
   const handleRegister = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
@@ -19,13 +22,21 @@ const Register = () => {
     };
     createUser(email, password).then((userCredential) => {
       setUser(userCredential)
-      navigate("/home")
+      // navigate("/home")
+      storeUser(user)
     });
 
    
   };
+  // useEffect(()=>{
+  //   if(isLoading){
+  //     return <p>Loading...</p>
+  //   }
+  // },[isLoading])
 
-  if(user){
+
+
+  if(user && !isLoading){
     return <Navigate to="/home" replace={true} />;
   }
   return (
@@ -51,7 +62,7 @@ const Register = () => {
                 {inputData?.map((value, index) => {
                   return (
                     <div className="form-control" key={index}>
-                      <div className="flex p-2 items-center border rounded-md">
+                      <div className="flex p-2 mt-2 items-center border rounded-md">
                         <div className="icon">{value.icon}</div>
                         <div className="in">
                           <input
@@ -66,17 +77,17 @@ const Register = () => {
                   );
                 })}
 
-                <div className="form-control mt-2">
-                  <button className="btn-default" type="submit">
+                <div className="form-control mt-1">
+                  <button className={`btn-default btn hover:bg-blue-500 ${isLoading? 'loading' : undefined}`} type="submit" style={{border: 'none'}}>
                     Register
                   </button>
                 </div>
               </form>
 
-              <div className="mt-2 text-center">
+              <div className="mt- text-center">
                 <p>
                   Already have an account?
-                  <Link to="/" className="text-blue-700 font-semibold">
+                  <Link to="/" className="font-semibold" style={{color: '#1877F2'}}>
                     Login
                   </Link>
                 </p>

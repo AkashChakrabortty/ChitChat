@@ -1,12 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import loginAnimation from "./68312-login.gif";
 import { Link, Navigate } from "react-router-dom";
 import { inputData } from "../../fakeData/inputData/inputData";
 import { UserInfo } from "../../UserContext/AuthProvider";
 const Login = () => {
-  const { LogIn , user} = useContext(UserInfo);
+  const { LogIn , user, isLoginLoading,setIsLoginLoading} = useContext(UserInfo);
+ 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setIsLoginLoading(true)
     const email = event.target.email.value;
     const password = event.target.password.value;
     LogIn(email, password)
@@ -33,7 +35,7 @@ const Login = () => {
                     inputData?.map((value,index)=>{
                         return    <div className="form-control" key={index}>
                         {
-                            value.id !== 1 ?  <div className="flex p-2 items-center border rounded-md">
+                            value.id !== 1 ?  <div className="flex p-4 mt-2 items-center border rounded-md">
                             <div className="icon">
                                {value.icon}
                             </div>
@@ -50,19 +52,19 @@ const Login = () => {
                       </div>  
                     })
                 }
-              <label className="label mt-1">
+              {/* <label className="label mt-1">
                 <Link className="label-text-alt link link-hover font-semibold">
                 Forgot password?
               </Link>
-                </label>
-              <div className="form-control mt-2">
-              <button className="btn-default" type="submit">Login</button>
+                </label> */}
+              <div className="form-control mt-4">
+              <button className={`btn-default btn hover:bg-blue-500 ${isLoginLoading? 'loading' : undefined}`} type="submit" style={{border: 'none'}}>Login</button>
               </div>
               </form>
               <div className="mt-2 text-center">
                 <p>
                   Don't have an account?
-                  <Link to="/register" className="text-blue-700 font-semibold">Register</Link>
+                  <Link to="/register" className=" font-semibold" style={{color: '#1877F2'}}>Register</Link>
                 </p>
               </div>
             </div>
