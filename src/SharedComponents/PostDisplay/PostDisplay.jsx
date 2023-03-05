@@ -20,7 +20,7 @@ const PostDisplay = () => {
           </div>
         </div>
         <div className="img overflow-auto h-96">
-        <img src="https://i.ibb.co/JkzvDHc/akash-2.png" className="w-full"/>
+        <img src="https://i.ibb.co/JkzvDHc/akash-2.png" className="w-full h-96"/>
         </div>
         <div className="reaction flex gap-5 p-2 mt-2">
          <Like />

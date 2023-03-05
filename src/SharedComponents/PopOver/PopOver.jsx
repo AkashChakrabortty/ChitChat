@@ -4,8 +4,8 @@ const PopOver = () => {
     const [isPopoverOpen, setIsPopoverOpen] = useState(false);
     return (
         <div className="img cursor-pointer relative" onClick={()=>setIsPopoverOpen(!isPopoverOpen)}>
-        <div className="avatar">
-          <div className="w-12 rounded-full">
+        <div className="avatar ">
+          <div className="w-12 rounded-full ring ring-blue-600 ring-offset-base-100 ring-offset-2">
             <img src="https://i.ibb.co/JkzvDHc/akash-2.png" />
           </div>
         </div>
