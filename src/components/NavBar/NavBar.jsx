@@ -10,7 +10,7 @@ const NavBar = () => {
 
   return (
     <div className="w-11/12 mx-auto">
-      <div className=" sm:flex justify-between items-center hidden bg-white drop-shadow-2xl rounded-lg p-2">
+      <div className=" sm:flex justify-between items-center hidden bg-white drop-shadow-lg rounded-lg p-2">
         <div className="left">
           <Link to='/home' className="text-2xl font-semibold" style={{ color: "#1877F2" }}>ChitChat.</Link>
         </div>

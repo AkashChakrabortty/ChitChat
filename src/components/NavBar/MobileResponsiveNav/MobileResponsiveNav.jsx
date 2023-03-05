@@ -5,7 +5,7 @@ import BottomNav from './BottomNav/BottomNav';
 
 const MobileResponsiveNav = () => {
     return (
-        <div className="sm:hidden bg-white drop-shadow-2xl rounded-lg p-2">
+        <div className="sm:hidden bg-white drop-shadow-lg rounded-lg p-2">
         <div className="upperNav flex items-center justify-between p-2">
           <div className="logo">
           <Link to='/home' className="text-2xl font-semibold" style={{ color: "#1877F2" }}>ChitChat.</Link>

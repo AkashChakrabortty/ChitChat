@@ -4,7 +4,7 @@ const ChitChatUsers = () => {
   return (
     <div>
         <h1 className="text-center font-semibold m-2">ChitChat Users</h1>
-      <div className="users w-11/12 mx-auto border bg-white drop-shadow-2xl p-2 rounded-md">
+      <div className="users w-11/12 mx-auto border bg-white drop-shadow-lg p-2 rounded-md">
         <div className="top w-11/12 mx-auto flex gap-2">
           <div className="img">
             <div className="avatar">

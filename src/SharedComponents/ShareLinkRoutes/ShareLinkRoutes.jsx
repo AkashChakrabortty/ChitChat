@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ShareLinkRoutes = ({data}) => {
     return (
-        <div className=' bg-white drop-shadow-2xl p-2 rounded-md mt-3'>
+        <div className=' bg-white drop-shadow-lg p-2 rounded-md mt-3'>
          {
                 data.data.map((value,index)=>{
                     return  <div  className='p-1' key={index}>

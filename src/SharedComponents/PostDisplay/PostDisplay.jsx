@@ -4,7 +4,7 @@ import Comment from '../Comment/Comment'
 
 const PostDisplay = () => {
     return (
-        <div className=" bg-white drop-shadow-2xl rounded-lg p-2 mt-5">
+        <div className=" bg-white drop-shadow-lg rounded-lg p-2 mt-5">
         <div className="header flex gap-2 p-2">
           <div className="img">
             <div className="avatar">

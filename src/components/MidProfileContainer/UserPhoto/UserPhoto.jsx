@@ -2,7 +2,7 @@ import React from "react";
 
 const UserPhoto = () => {
   return (
-    <div>
+    <div className="mt-3">
       <div className="photo">
         <div className="cover">
           <img

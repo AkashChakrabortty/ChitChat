@@ -3,7 +3,7 @@ import { MdCreate } from 'react-icons/md';
 
 const CreatePost = () => {
     return (
-        <div className="postContainer bg-white drop-shadow-2xl rounded-lg p-5">
+        <div className="postContainer bg-white drop-shadow-lg rounded-lg p-5">
         <div className="headerContainer flex gap-2 w-10/12 mx-auto">
             <div className="logo flex items-center bg-base-200 rounded-full p-2">
                 <MdCreate />
