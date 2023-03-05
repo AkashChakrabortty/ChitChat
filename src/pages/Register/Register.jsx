@@ -1,11 +1,33 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { inputData, register } from "../../fakeData/inputData/inputData";
+import React, { useContext } from "react";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { inputData } from "../../fakeData/inputData/inputData";
+import { UserInfo } from "../../UserContext/AuthProvider";
 import registerAnimation from "./107385-reg.gif";
 
-
 const Register = () => {
+  const { createUser , setUser , user} = useContext(UserInfo);
+  const navigate = useNavigate();
+  const handleRegister = (event) => {
+    event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    const name = event.target.name.value;
+    const user = {
+      name,
+      email,
+      password,
+    };
+    createUser(email, password).then((userCredential) => {
+      setUser(userCredential)
+      navigate("/home")
+    });
+
    
+  };
+
+  if(user){
+    return <Navigate to="/home" replace={true} />;
+  }
   return (
     <div>
       <div className="header font-semibold text-2xl text-center -mb-28 mt-20">
@@ -22,32 +44,35 @@ const Register = () => {
               />
             </div>
           </div>
+
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 p-2">
             <div className="card-body">
-                {
-                    inputData?.map((value,index)=>{
-                        return    <div className="form-control" key={index}>
-                        <div className="flex p-2 items-center border rounded-md">
-                            <div className="icon">
-                               {value.icon}
-                            </div>
-                            <div className="in">
-                            <input
-                          type={value.name}
-                          placeholder={value.placeholder}
-                          className="input focus:outline-none"
-                        />
-                            </div>
+              <form onSubmit={handleRegister}>
+                {inputData?.map((value, index) => {
+                  return (
+                    <div className="form-control" key={index}>
+                      <div className="flex p-2 items-center border rounded-md">
+                        <div className="icon">{value.icon}</div>
+                        <div className="in">
+                          <input
+                            type={value.name}
+                            placeholder={value.placeholder}
+                            className="input focus:outline-none"
+                            name={value.name}
+                          />
                         </div>
-                      </div>  
-                    })
-                }
-              
-              <div className="form-control mt-2">
-                <button className="btn-default">
-                  Register
-                </button>
-              </div>
+                      </div>
+                    </div>
+                  );
+                })}
+
+                <div className="form-control mt-2">
+                  <button className="btn-default" type="submit">
+                    Register
+                  </button>
+                </div>
+              </form>
+
               <div className="mt-2 text-center">
                 <p>
                   Already have an account?

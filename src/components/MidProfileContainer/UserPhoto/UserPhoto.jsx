@@ -2,7 +2,7 @@ import React from "react";
 
 const UserPhoto = () => {
   return (
-    <div className="mt-3">
+    <div className="mt-3 bg-white drop-shadow-lg">
       <div className="photo">
         <div className="cover">
           <img
@@ -19,7 +19,7 @@ const UserPhoto = () => {
           </div>
         </div>
       </div>
-      <div className="bio text-center font-semibold">
+      <div className="bio text-center font-semibold p-2">
         <h2 className="">Akash Chakrabortty</h2>
         <p>Learner || Competitive Programmer || MERN-Stack Developer</p>
       </div>

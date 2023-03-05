@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { UserInfo } from '../../UserContext/AuthProvider';
 
 const PopOver = () => {
     const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+    const { logout} = useContext(UserInfo);
     return (
         <div className="img cursor-pointer relative" onClick={()=>setIsPopoverOpen(!isPopoverOpen)}>
         <div className="avatar ">
@@ -14,7 +16,7 @@ const PopOver = () => {
           className={`${isPopoverOpen ? 'absolute top-2 right-1 mt-10 ml-2 bg-base-200 p-2 rounded drop-shadow-lg w-28 font-semibold' : 'hidden'}`}
           name='content'
         >
-          <p>Logout</p>
+          <p onClick={logout}>Logout</p>
         </div>
 
       </div>

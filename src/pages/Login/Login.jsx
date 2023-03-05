@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import loginAnimation from "./68312-login.gif";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { inputData } from "../../fakeData/inputData/inputData";
+import { UserInfo } from "../../UserContext/AuthProvider";
 const Login = () => {
+  const { LogIn , user} = useContext(UserInfo);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    LogIn(email, password)
+  };
+  if(user){
+    return <Navigate to="/home" replace={true} />;
+  }
   return (
     <div>
          <div className="header font-semibold text-2xl text-center -mb-28 mt-20">
@@ -17,6 +28,7 @@ const Login = () => {
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body p-12">
+              <form onSubmit={handleSubmit}>
             {
                     inputData?.map((value,index)=>{
                         return    <div className="form-control" key={index}>
@@ -28,6 +40,7 @@ const Login = () => {
                             <div className="in">
                             <input
                           type={value.name}
+                          name={value.name}
                           placeholder={value.placeholder}
                           className="input focus:outline-none"
                         />
@@ -43,9 +56,9 @@ const Login = () => {
               </Link>
                 </label>
               <div className="form-control mt-2">
-              <button className="btn-default">Login</button>
-               
+              <button className="btn-default" type="submit">Login</button>
               </div>
+              </form>
               <div className="mt-2 text-center">
                 <p>
                   Don't have an account?

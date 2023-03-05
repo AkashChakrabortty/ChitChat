@@ -8,6 +8,7 @@ import FriendRequestsContainer from '../components/MidHomeContainer/LayoutContai
 import MidHomeContainer from '../components/MidHomeContainer/LayoutContainer/MidHomeContainer/MidHomeContainer.jsx'
 import ProfilePage from "../pages/ProfilePage/ProfilePage.jsx";
 import MidProfileContainer from "../components/MidProfileContainer/LayoutContainer/MidProfileContainer/MidProfileContainer.jsx";
+import PrivateRoute from '../PrivateRoute/PrivateRoute'
 
 const route = createBrowserRouter([
     {
@@ -20,7 +21,7 @@ const route = createBrowserRouter([
     },
     {
         path: '/home',
-        element: <HomePage></HomePage>,
+        element: <PrivateRoute><HomePage></HomePage></PrivateRoute>,
         children: [
             {
                 path: '/home',
