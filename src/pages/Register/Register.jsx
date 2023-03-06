@@ -7,7 +7,6 @@ import registerAnimation from "./107385-reg.gif";
 
 const Register = () => {
   const { createUser , setUser , user} = useContext(UserInfo);
-  const navigate = useNavigate();
   const [storeUser,{isLoading }] = useStoreUserInfoMutation()
   console.log(isLoading)
   const handleRegister = (event) => {
@@ -22,19 +21,9 @@ const Register = () => {
     };
     createUser(email, password).then((userCredential) => {
       setUser(userCredential)
-      // navigate("/home")
       storeUser(user)
     });
-
-   
   };
-  // useEffect(()=>{
-  //   if(isLoading){
-  //     return <p>Loading...</p>
-  //   }
-  // },[isLoading])
-
-
 
   if(user && !isLoading){
     return <Navigate to="/home" replace={true} />;
