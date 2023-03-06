@@ -78,8 +78,12 @@ const Register = () => {
                 })}
 
                 <div className="form-control mt-1">
-                  <button className={`btn-default btn hover:bg-blue-500 ${isLoading? 'loading' : undefined}`} type="submit" style={{border: 'none'}}>
-                    Register
+                  <button className='btn-default' btn type="submit" style={{border: 'none'}}>
+                  {
+                      isLoading ? <div className="flex justify-center items-center">
+                      <div className="custom-spinner"></div>
+                     </div> :  <span>Register</span>
+                    }
                   </button>
                 </div>
               </form>

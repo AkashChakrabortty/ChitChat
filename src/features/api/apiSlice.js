@@ -11,6 +11,11 @@ export const allApi = createApi({
             url: `getSingleUserInfo/${data.email}`
          })
         }),
+        getAllChitChatUsers: builder.query({
+            query: (data) => ({
+               url: `/getAllChitChatUsers`
+            })
+           }),
         storeUserInfo: builder.mutation({
             query: (data) => ({
                 url: '/storeUserInfo',
@@ -23,4 +28,4 @@ export const allApi = createApi({
 
 })
 
-export const {useStoreUserInfoMutation , useGetSingleUserInfoQuery } = allApi
+export const {useStoreUserInfoMutation , useGetSingleUserInfoQuery , useGetAllChitChatUsersQuery } = allApi
