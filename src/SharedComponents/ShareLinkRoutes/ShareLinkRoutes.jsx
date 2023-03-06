@@ -16,7 +16,7 @@ const ShareLinkRoutes = ({data}) => {
                     <span className='text-2xl text-gray-600'>{value.icon}</span>
                     <span className='font-semibold' >{value.name}
                     {
-                        value.id === 3 && frndReq.length > 0 ? <span className='ml-1' style={{color:'#1877F2'}}>{frndReq.length}</span> : undefined
+                        value.id === 3 && frndReq?.length > 0 ? <span className='ml-1' style={{color:'#1877F2'}}>{frndReq?.length}</span> : undefined
                     }
                     </span>
                     

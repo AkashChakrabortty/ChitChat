@@ -15,7 +15,7 @@ const MobileIconNav = ({ data }) => {
               <div className="indicator">
               {
                 value.id === 3 ?   <span className="indicator-item mb-1 font-semibold" style={{ color: "#1877F2" , fontSize: '15px' }} >
-                {frndReq.length}
+                {frndReq?.length}
               </span> : undefined
               }
                {value.icon}
