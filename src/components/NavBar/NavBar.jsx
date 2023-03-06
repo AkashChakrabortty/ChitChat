@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { GrNotification } from "react-icons/gr";
 import { Link } from "react-router-dom";
@@ -6,8 +6,7 @@ import PopOver from "../../SharedComponents/PopOver/PopOver";
 import MobileResponsiveNav from "./MobileResponsiveNav/MobileResponsiveNav";
 
 const NavBar = () => {
-
-
+ 
   return (
     <div className="w-11/12 mx-auto">
       <div className=" sm:flex justify-between items-center hidden bg-white drop-shadow-lg rounded-lg p-2">

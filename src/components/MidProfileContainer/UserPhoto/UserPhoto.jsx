@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useGetSingleUserInfoQuery } from "../../../features/api/apiSlice";
+import { UserInfo } from "../../../UserContext/AuthProvider";
 
 const UserPhoto = () => {
+  const { user} = useContext(UserInfo);
+    const {data} = useGetSingleUserInfoQuery({email:user.email});
   return (
     <div className="mt-3 bg-white drop-shadow-lg">
       <div className="photo">
         <div className="cover">
           <img
-            src="https://i.ibb.co/JkzvDHc/akash-2.png"
-            alt="Akash"
+           src={data?.coverPhoto} alt={data?.name}
             className="w-full h-52"
           />
         </div>
         <div className="profile text-center">
           <div className="avatar -mt-16">
             <div className="w-24 rounded-full ring ring-blue-400 ring-offset-base-100 ring-offset-2">
-              <img src="https://i.ibb.co/JkzvDHc/akash-2.png" alt="Akash" />
+              <img src={data?.profilePhoto} alt={data?.name} />
             </div>
           </div>
         </div>

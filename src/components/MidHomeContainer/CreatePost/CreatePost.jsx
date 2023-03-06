@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { MdCreate } from 'react-icons/md';
+import { useGetSingleUserInfoQuery } from '../../../features/api/apiSlice';
+import { UserInfo } from '../../../UserContext/AuthProvider';
 
 const CreatePost = () => {
+    const { user} = useContext(UserInfo);
+    const {data} = useGetSingleUserInfoQuery({email:user.email});
     return (
         <div className="postContainer bg-white drop-shadow-lg rounded-lg p-5">
         <div className="headerContainer flex gap-2 w-10/12 mx-auto">
@@ -17,7 +21,7 @@ const CreatePost = () => {
         <div className="logo flex items-center">
         <div className="avatar">
           <div className="w-12 rounded-full">
-            <img src="https://i.ibb.co/JkzvDHc/akash-2.png" />
+          <img src={data?.profilePhoto} alt={data?.name}/>
           </div>
         </div>
             </div>

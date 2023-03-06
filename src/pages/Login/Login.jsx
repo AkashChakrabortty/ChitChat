@@ -1,11 +1,12 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import loginAnimation from "./68312-login.gif";
 import { Link, Navigate } from "react-router-dom";
 import { inputData } from "../../fakeData/inputData/inputData";
 import { UserInfo } from "../../UserContext/AuthProvider";
+import { useDispatch } from "react-redux";
 const Login = () => {
   const { LogIn , user, isLoginLoading,setIsLoginLoading} = useContext(UserInfo);
- 
+ const dispatch  = useDispatch();
   const handleSubmit = (event) => {
     event.preventDefault();
     setIsLoginLoading(true)
@@ -14,6 +15,7 @@ const Login = () => {
     LogIn(email, password)
   };
   if(user){
+    dispatch({email:user.email,type: 'click'})
     return <Navigate to="/home" replace={true} />;
   }
   return (

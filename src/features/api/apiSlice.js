@@ -6,6 +6,11 @@ export const allApi = createApi({
         baseUrl: 'http://localhost:5000/',
     }),
     endpoints:(builder)=> ({
+        getSingleUserInfo: builder.query({
+         query: (data) => ({
+            url: `getSingleUserInfo/${data.email}`
+         })
+        }),
         storeUserInfo: builder.mutation({
             query: (data) => ({
                 url: '/storeUserInfo',
@@ -18,4 +23,4 @@ export const allApi = createApi({
 
 })
 
-export const {useStoreUserInfoMutation} = allApi
+export const {useStoreUserInfoMutation , useGetSingleUserInfoQuery } = allApi
