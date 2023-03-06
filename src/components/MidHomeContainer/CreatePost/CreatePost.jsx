@@ -34,9 +34,7 @@ const CreatePost = () => {
             email: user.email,
             post: text.trim(),
             post_photo: data.data.display_url,
-            milliseconds: milliseconds,
-            user_photo: data.profilePhoto,
-            user_name: data.name,
+            milliseconds: milliseconds
           };
 
           //insert db

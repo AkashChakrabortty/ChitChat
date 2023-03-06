@@ -23,7 +23,7 @@ const UserPhoto = () => {
         </div>
       </div>
       <div className="bio text-center font-semibold p-2">
-        <h2 className="">Akash Chakrabortty</h2>
+        <h2 className="">{data?.name}</h2>
         <p>Learner || Competitive Programmer || MERN-Stack Developer</p>
       </div>
     </div>
