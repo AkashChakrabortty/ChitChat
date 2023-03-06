@@ -11,6 +11,11 @@ export const allApi = createApi({
         url: `getSingleUserInfo/${data.email}`,
       }),
     }),
+    getSingleUserFriendReq: builder.query({
+        query: (data) => ({
+          url: `request/${data.email}`,
+        }),
+      }),
     getAllChitChatUsers: builder.query({
       query: (data) => ({
         url: `/getAllChitChatUsers`,
@@ -35,5 +40,6 @@ export const {
   useStoreUserInfoMutation,
   useGetSingleUserInfoQuery,
   useGetAllChitChatUsersQuery,
-  useGetAllIndividualUserPostsQuery
+  useGetAllIndividualUserPostsQuery,
+  useGetSingleUserFriendReqQuery
 } = allApi;
