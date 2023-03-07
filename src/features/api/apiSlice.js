@@ -28,6 +28,11 @@ export const allApi = createApi({
         url:  `getAllIndividualUserPosts/${data.email}`,
       }),
     }),
+    getAllFriendsPosts: builder.query({
+      query: (data) => ({
+        url:  `/getAllFriendsPosts/${data.email}`,
+      }),
+    }),
     storeUserInfo: builder.mutation({
       query: (data) => ({
         url: "/storeUserInfo",
@@ -69,5 +74,6 @@ export const {
   useGetSingleUserFriendReqQuery,
   useFriendRequestDeleteMutation,
   useSentFriendRequestMutation,
-  useFriendRequestAcceptMutation
+  useFriendRequestAcceptMutation,
+  useGetAllFriendsPostsQuery
 } = allApi;

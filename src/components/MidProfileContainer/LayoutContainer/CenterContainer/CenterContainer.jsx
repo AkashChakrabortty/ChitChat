@@ -9,7 +9,7 @@ import { useGetAllIndividualUserPostsQuery } from '../../../../features/api/apiS
 
 const CenterContainer = () => {
     const { user } = useContext(UserInfo);
-    const { data } = useGetAllIndividualUserPostsQuery({ email: user.email });
+    const { data } = useGetAllIndividualUserPostsQuery({ email: user?.email });
     return (
         <div>
             <UserPhoto />
