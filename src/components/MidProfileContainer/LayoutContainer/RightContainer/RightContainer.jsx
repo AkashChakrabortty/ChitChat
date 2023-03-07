@@ -9,7 +9,7 @@ const RightContainer = () => {
   const { data } = useGetAllIndividualUserPostsQuery({ email: user.email });
   // const [data,setData] = useState([])
   // useEffect(()=>{
-  //   fetch(`http://localhost:5000/getAllIndividualUserPosts/${user?.email}`)
+  //   fetch(`https://chitchat-one-pearl.vercel.app/getAllIndividualUserPosts/${user?.email}`)
   //   .then(res => res.json())
   //   .then(data => {
   //     console.log(data)
