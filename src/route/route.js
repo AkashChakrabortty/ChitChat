@@ -10,6 +10,7 @@ import ProfilePage from "../pages/ProfilePage/ProfilePage.jsx";
 import MidProfileContainer from "../components/MidProfileContainer/LayoutContainer/MidProfileContainer/MidProfileContainer.jsx";
 import PrivateRoute from '../PrivateRoute/PrivateRoute'
 import UserLikes from "../components/MidProfileContainer/UserLikes/UserLikes.jsx";
+import SearchResult from "../pages/SearchResult/SearchResult.js";
 
 const route = createBrowserRouter([
     {
@@ -39,6 +40,10 @@ const route = createBrowserRouter([
             {
                 path: '/home/chats',
                 element: <ChatContainer></ChatContainer>,
+            },
+            {
+                path: '/home/searchResult',
+                element: <SearchResult></SearchResult>,
             },
         ]
     },

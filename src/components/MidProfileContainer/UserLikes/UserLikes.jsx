@@ -15,7 +15,7 @@ const UserLikes = () => {
         </div> :   <>
         {
           data?.map((userInfo,index)=>{
-            return  <div>
+            return  <div> 
             
                 <div className="users sm:w-1/2 w-11/12 mx-auto border bg-white drop-shadow-lg p-2 mt-1 rounded-md" key={index}>
                 <div className="top w-11/12 mx-auto flex gap-2">

@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AiOutlineSearch } from "react-icons/ai";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useGetSearchUsersQuery } from '../../../features/api/apiSlice';
 import BottomNav from './BottomNav/BottomNav';
 
 const MobileResponsiveNav = () => {
+  const [inputValue, setInputValue] = useState('');
+  const {data} = useGetSearchUsersQuery({name:inputValue})
+  const navigate = useNavigate()
+ const handleSearch = (event) => {
+  if (event.key === 'Enter') {
+    navigate('/home/searchResult', { state: data })
+   }
+ 
+ }
     return (
         <div className="sm:hidden bg-white drop-shadow-lg rounded-lg p-2">
         <div className="upperNav flex items-center justify-between p-2">
@@ -20,7 +30,7 @@ const MobileResponsiveNav = () => {
                   <input
                     type="text"
                     placeholder="Search ChitChat"
-                    className="input focus:outline-none w-full bg-base-200"
+                    className="input focus:outline-none w-full bg-base-200" name="name" onChange={(event) => setInputValue(event.target.value)} onKeyDown={handleSearch}
                   />
                 </div>
               </div>
