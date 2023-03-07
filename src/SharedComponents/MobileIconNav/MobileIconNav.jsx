@@ -5,7 +5,7 @@ import { UserInfo } from "../../UserContext/AuthProvider";
 
 const MobileIconNav = ({ data }) => {
     const { user} = useContext(UserInfo);
-    const {data: frndReq} = useGetSingleUserFriendReqQuery({email:user.email});
+    const {data: frndReq} = useGetSingleUserFriendReqQuery({email:user?.email});
   return (
     <div className="mobileProfileNav flex justify-between items-center mt-2 p-2">
       {data.data.map((value, index) => {

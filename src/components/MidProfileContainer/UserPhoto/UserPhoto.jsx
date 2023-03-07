@@ -4,7 +4,7 @@ import { UserInfo } from "../../../UserContext/AuthProvider";
 
 const UserPhoto = () => {
   const { user} = useContext(UserInfo);
-    const {data} = useGetSingleUserInfoQuery({email:user.email});
+    const {data} = useGetSingleUserInfoQuery({email:user?.email});
   return (
     <div className="mt-3 bg-white drop-shadow-lg">
       <div className="photo">

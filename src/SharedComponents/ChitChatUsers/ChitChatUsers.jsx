@@ -10,7 +10,6 @@ const ChitChatUsers = () => {
   const [ setReqInfo, {isLoading:isSentLoading , isSuccess: isSentSuccess} ] = useSentFriendRequestMutation();
   const [currentUser,setCurrentUser] = useState({})
   const addFriend = (people) => {
-    console.log(people)
     setCurrentUser(people)
     const milliseconds = new Date().getTime();
     const reqInfo = {

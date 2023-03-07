@@ -6,7 +6,7 @@ import { UserInfo } from '../../../../UserContext/AuthProvider';
 
 const RightContainer = () => {
     const { user} = useContext(UserInfo);
-    const {data} = useGetSingleUserFriendReqQuery({email:user.email});
+    const {data} = useGetSingleUserFriendReqQuery({email:user?.email});
     return (
         <div className='w-1/4'>
           <FriendRequests data={data}/>

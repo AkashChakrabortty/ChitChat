@@ -5,7 +5,7 @@ import { UserInfo } from '../../UserContext/AuthProvider';
 const PopOver = () => {
     const [isPopoverOpen, setIsPopoverOpen] = useState(false);
     const { logout, user} = useContext(UserInfo);
-    const {data} = useGetSingleUserInfoQuery({email:user.email});
+    const {data} = useGetSingleUserInfoQuery({email:user?.email});
     return (
         <div className="img cursor-pointer relative" onClick={()=>setIsPopoverOpen(!isPopoverOpen)}>
         <div className="avatar ">

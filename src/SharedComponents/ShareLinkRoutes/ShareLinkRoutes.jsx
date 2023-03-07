@@ -5,7 +5,7 @@ import { UserInfo } from '../../UserContext/AuthProvider';
 
 const ShareLinkRoutes = ({data}) => {
     const { user} = useContext(UserInfo);
-    const {data: frndReq} = useGetSingleUserFriendReqQuery({email:user.email});
+    const {data: frndReq} = useGetSingleUserFriendReqQuery({email:user?.email});
     return (
         <div className=' bg-white drop-shadow-lg p-2 rounded-md mt-3'>
          {

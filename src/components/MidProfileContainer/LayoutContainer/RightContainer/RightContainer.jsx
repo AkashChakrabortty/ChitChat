@@ -6,7 +6,7 @@ import UserPhoto from "../../UserPhoto/UserPhoto";
 
 const RightContainer = () => {
   const { user } = useContext(UserInfo);
-  const { data } = useGetAllIndividualUserPostsQuery({ email: user.email });
+  const { data } = useGetAllIndividualUserPostsQuery({ email: user?.email });
  
   return (
     <div className="w-3/5">
