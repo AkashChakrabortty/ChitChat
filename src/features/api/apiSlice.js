@@ -47,6 +47,13 @@ export const allApi = createApi({
         body: data,
       }),
     }),
+    insertLike: builder.mutation({
+      query: (data) => ({
+        url: "/like",
+        method: "POST",
+        body: data,
+      }),
+    }),
     friendRequestAccept: builder.mutation({
       query: (data) => ({
         url: "/reqAccepted",
@@ -75,5 +82,6 @@ export const {
   useFriendRequestDeleteMutation,
   useSentFriendRequestMutation,
   useFriendRequestAcceptMutation,
-  useGetAllFriendsPostsQuery
+  useGetAllFriendsPostsQuery,
+  useInsertLikeMutation
 } = allApi;

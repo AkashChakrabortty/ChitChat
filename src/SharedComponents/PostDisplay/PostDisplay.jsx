@@ -22,13 +22,13 @@ const PostDisplay = ({data}) => {
               </span> 
             </div>
           </div>
-          <p>{post.post}</p>
+          <p className='font-semibold'>{post.post}</p>
           <div className="img overflow-auto h-96">
       
           <img src={post.post_photo} className="w-full h-96" alt='post'/>
           </div>
           <div className="reaction flex gap-5 p-2 mt-2">
-           <Like />
+           <Like post={post}/>
            <Comment />
           </div>
           <hr />
