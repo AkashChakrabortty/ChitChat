@@ -49,7 +49,7 @@ const route = createBrowserRouter([
     },
     {
         path: '/profile',
-        element: <ProfilePage></ProfilePage>,
+        element: <PrivateRoute><ProfilePage></ProfilePage></PrivateRoute>,
         children: [
             {
                 path: '/profile',
