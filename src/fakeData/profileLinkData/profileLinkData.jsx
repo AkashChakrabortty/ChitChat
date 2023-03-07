@@ -13,7 +13,7 @@ export const profileLinkData = [
     {
         id: 2,
         icon: <GiThreeFriends />,
-        link: '/friends',
+        link: '/profile/friends',
         name: 'Friends'
     },
     {
@@ -25,7 +25,7 @@ export const profileLinkData = [
     {
         id: 4,
         icon: <AiOutlineLike />,
-        link: '/likes',
+        link: '/profile/likes',
         name: 'Likes'
     },
 ]

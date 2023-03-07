@@ -9,6 +9,7 @@ import MidHomeContainer from '../components/MidHomeContainer/LayoutContainer/Mid
 import ProfilePage from "../pages/ProfilePage/ProfilePage.jsx";
 import MidProfileContainer from "../components/MidProfileContainer/LayoutContainer/MidProfileContainer/MidProfileContainer.jsx";
 import PrivateRoute from '../PrivateRoute/PrivateRoute'
+import UserLikes from "../components/MidProfileContainer/UserLikes/UserLikes.jsx";
 
 const route = createBrowserRouter([
     {
@@ -48,6 +49,10 @@ const route = createBrowserRouter([
             {
                 path: '/profile',
                 element: <MidProfileContainer></MidProfileContainer>
+            },
+            {
+                path: '/profile/likes',
+                element: <UserLikes></UserLikes>
             }
         ]
     },

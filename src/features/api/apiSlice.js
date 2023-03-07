@@ -28,6 +28,11 @@ export const allApi = createApi({
         url:  `getAllIndividualUserPosts/${data.email}`,
       }),
     }),
+    getAllLikes: builder.query({
+      query: (data) => ({
+        url:  `getAllLikes/${data.email}`,
+      }),
+    }),
     getAllFriendsPosts: builder.query({
       query: (data) => ({
         url:  `/getAllFriendsPosts/${data.email}`,
@@ -83,5 +88,6 @@ export const {
   useSentFriendRequestMutation,
   useFriendRequestAcceptMutation,
   useGetAllFriendsPostsQuery,
-  useInsertLikeMutation
+  useInsertLikeMutation,
+  useGetAllLikesQuery
 } = allApi;
