@@ -8,7 +8,7 @@ import registerAnimation from "./107385-reg.gif";
 const Register = () => {
   const { createUser , setUser , user} = useContext(UserInfo);
   const [storeUser,{isLoading }] = useStoreUserInfoMutation()
-  console.log(isLoading)
+ 
   const handleRegister = (event) => {
     event.preventDefault();
     const email = event.target.email.value;

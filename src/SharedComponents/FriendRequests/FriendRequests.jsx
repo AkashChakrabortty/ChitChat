@@ -1,9 +1,20 @@
 import React from "react";
+import toast  from "react-hot-toast";
+import { useFriendRequestDeleteMutation } from "../../features/api/apiSlice";
+import { Toaster } from 'react-hot-toast';
 
 const FriendRequests = ({data}) => {
+  const notify = (value) => toast(value);
+  const [reqDelete,{isLoading:isDeleteLoading, isSuccess:isDeleteSuccess}] = useFriendRequestDeleteMutation();
+  if(isDeleteSuccess){
+    console.log(isDeleteSuccess)
+    notify('Request Deleted')
+  }
+ 
   return (
     <div>
       <h1 className="text-center font-semibold m-2">Friend request <span style={{color:'#1877F2'}}>{data?.length}</span> </h1>
+      <Toaster />
       {
         data?.map((value,index)=>{
           return   <div className=" users w-11/12 mx-auto border bg-white drop-shadow-lg p-2 rounded-md" key={index}>
@@ -20,8 +31,14 @@ const FriendRequests = ({data}) => {
             </div>
           </div>
           <div className="footerBtn flex gap-2 w-11/12 mx-auto">
-            <button className="btn-default">Confrim</button>
-            <button className="btn-default">Delete</button>
+            <button className="btn-default">Confirm</button>
+            <button  onClick={() => reqDelete(data)} className='btn-default' btn type="submit" style={{border: 'none'}}>
+                  {
+                      isDeleteLoading ? <div className="flex justify-center items-center">
+                      <div className="custom-spinner"></div>
+                     </div> :  <span>Delete</span>
+                    }
+                  </button>
           </div>
         </div>
         })

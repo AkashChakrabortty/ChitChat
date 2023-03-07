@@ -5,6 +5,7 @@ export const allApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:5000/",
   }),
+  tagTypes: ['FriendRequest'],
   endpoints: (builder) => ({
     getSingleUserInfo: builder.query({
       query: (data) => ({
@@ -15,6 +16,7 @@ export const allApi = createApi({
         query: (data) => ({
           url: `request/${data.email}`,
         }),
+        providesTags: ['FriendRequest']
       }),
     getAllChitChatUsers: builder.query({
       query: (data) => ({
@@ -33,6 +35,21 @@ export const allApi = createApi({
         body: data,
       }),
     }),
+    sentFriendRequest: builder.mutation({
+      query: (data) => ({
+        url: "/addFriend",
+        method: "POST",
+        body: data,
+      }),
+    }),
+    friendRequestDelete: builder.mutation({
+      query: (data) => ({
+        url: `/reqDelete/${data[0]._id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ['FriendRequest']
+    }),
+
   }),
 });
 
@@ -41,5 +58,7 @@ export const {
   useGetSingleUserInfoQuery,
   useGetAllChitChatUsersQuery,
   useGetAllIndividualUserPostsQuery,
-  useGetSingleUserFriendReqQuery
+  useGetSingleUserFriendReqQuery,
+  useFriendRequestDeleteMutation,
+  useSentFriendRequestMutation
 } = allApi;

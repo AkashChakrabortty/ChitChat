@@ -1,32 +1,31 @@
-import React, { useContext } from "react";
-import { toast } from "react-toastify";
-import { useGetAllChitChatUsersQuery } from "../../features/api/apiSlice";
+import React, { useContext, useEffect, useState } from "react";
+import { useGetAllChitChatUsersQuery, useSentFriendRequestMutation } from "../../features/api/apiSlice";
 import { UserInfo } from "../../UserContext/AuthProvider";
+import toast  from "react-hot-toast";
 
 const ChitChatUsers = () => {
   const { data , isLoading} = useGetAllChitChatUsersQuery();
   const {user} = useContext(UserInfo);
-  const notify = (a) => toast(a);
+  const notify = (a) => toast.success(a);
+  const [ setReqInfo, {isLoading:isSentLoading , isSuccess: isSentSuccess} ] = useSentFriendRequestMutation();
+  const [currentUser,setCurrentUser] = useState({})
   const addFriend = (people) => {
+    console.log(people)
+    setCurrentUser(people)
     const milliseconds = new Date().getTime();
     const reqInfo = {
       sender_email: user.email,
       receiver_email: people.email,
       milliseconds: milliseconds,
     };
-
-    fetch("http://localhost:5000/addFriend", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(reqInfo),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        notify('Request Sent')
-      });
+    setReqInfo(reqInfo)
   };
+
+  useEffect(()=>{
+    if(isSentSuccess){
+      notify('Request Sent')
+    }
+  },[isSentSuccess])
 
   return (
     <div>
@@ -53,7 +52,13 @@ const ChitChatUsers = () => {
                 </div>
               </div>
               <div className="footerBtn flex gap-2 w-11/12 mx-auto">
-                <button className="btn-default"  onClick={() => addFriend(userInfo)}>Add Friend</button>
+                <button  onClick={() => addFriend(userInfo)} className='btn-default' btn type="submit" style={{border: 'none'}}>
+                  {
+                      isSentLoading && userInfo._id === currentUser._id ? <div className="flex justify-center items-center">
+                      <div className="custom-spinner"></div>
+                     </div> :  <span>Add Friend</span>
+                    }
+                  </button>
               </div>
             </div> : undefined
             }
