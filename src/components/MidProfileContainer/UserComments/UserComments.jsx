@@ -4,7 +4,7 @@ const UserComments = () => {
     const {user} = useContext(UserInfo);
     const [data,setData] = useState([])
    useEffect(()=>{
-    fetch(`http://localhost:5000/getAllComments/${user?.email}`)
+    fetch(`https://chitchat-one-pearl.vercel.app/getAllComments/${user?.email}`)
     .then(res => res.json())
     .then(data => setData(data))
    },[user])

@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const allApi = createApi({
   reducerPath: "allApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:5000/",
+    baseUrl: "https://chitchat-one-pearl.vercel.app/",
   }),
   tagTypes: ['DeleteFriendReq','AcceptFriendReq','insertComment','insertChat','editProfileInfo'],
   endpoints: (builder) => ({
