@@ -12,6 +12,7 @@ import PrivateRoute from '../PrivateRoute/PrivateRoute'
 import UserLikes from "../components/MidProfileContainer/UserLikes/UserLikes.jsx";
 import SearchResult from "../pages/SearchResult/SearchResult.js";
 import UserComments from "../components/MidProfileContainer/UserComments/UserComments.jsx";
+import UserFriends from "../components/MidProfileContainer/UserFriends/UserFriends.jsx";
 
 const route = createBrowserRouter([
     {
@@ -63,6 +64,10 @@ const route = createBrowserRouter([
             {
                 path: '/profile/comments',
                 element: <UserComments></UserComments>
+            },
+            {
+                path: '/profile/friends',
+                element: <UserFriends></UserFriends>
             }
         ]
     },
