@@ -14,6 +14,7 @@ import SearchResult from "../pages/SearchResult/SearchResult.js";
 import UserComments from "../components/MidProfileContainer/UserComments/UserComments.jsx";
 import UserFriends from "../components/MidProfileContainer/UserFriends/UserFriends.jsx";
 import IndividualChat from "../components/IndividualChat/IndividualChat.jsx";
+import ProfileInfoEdit from "../components/MidProfileContainer/ProfileInfoEdit/ProfileInfoEdit.jsx";
 
 const route = createBrowserRouter([
     {
@@ -73,6 +74,10 @@ const route = createBrowserRouter([
             {
                 path: '/profile/friends',
                 element: <UserFriends></UserFriends>
+            },
+            {
+                path: '/profile/profileInfoEdit',
+                element: <ProfileInfoEdit></ProfileInfoEdit>
             }
         ]
     },

@@ -7,7 +7,7 @@ export const profileLinkData = [
     {
         id: 1,
         icon: <BiEditAlt />,
-        link: '/profileInfoEdit',
+        link: '/profile/profileInfoEdit',
         name: 'Info Edit'
     },
     {

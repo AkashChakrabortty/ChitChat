@@ -5,12 +5,13 @@ export const allApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:5000/",
   }),
-  tagTypes: ['DeleteFriendReq','AcceptFriendReq','insertComment','insertChat'],
+  tagTypes: ['DeleteFriendReq','AcceptFriendReq','insertComment','insertChat','editProfileInfo'],
   endpoints: (builder) => ({
     getSingleUserInfo: builder.query({
       query: (data) => ({
         url: `getSingleUserInfo/${data.email}`,
       }),
+      providesTags: ['editProfileInfo']
     }),
     getSingleUserFriendReq: builder.query({
         query: (data) => ({
@@ -89,6 +90,14 @@ export const allApi = createApi({
       }),
       invalidatesTags: ['insertComment']
     }),
+    editProfileInfo: builder.mutation({
+      query: (data) => ({
+        url: `/profileInfoEdit`,
+        method: "POST",
+        body: data,
+      }),
+      invalidatesTags: ['editProfileInfo']
+    }),
     insertChats: builder.mutation({
       query: (data) => ({
         url: "/insertChats",
@@ -133,5 +142,6 @@ export const {
   useGetPostAllCommentsQuery,
   useGetAllFriendsQuery,
   useInsertChatsMutation,
-  useGetAllChatsQuery
+  useGetAllChatsQuery,
+  useEditProfileInfoMutation
 } = allApi;

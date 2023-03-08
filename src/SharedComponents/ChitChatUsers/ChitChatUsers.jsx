@@ -51,7 +51,7 @@ const ChitChatUsers = () => {
                 </div>
               </div>
               <div className="footerBtn flex gap-2 w-11/12 mx-auto">
-                <button  onClick={() => addFriend(userInfo)} className='btn-default' btn type="submit" style={{border: 'none'}}>
+                <button  onClick={() => addFriend(userInfo)} className='btn-default' type="submit" style={{border: 'none'}}>
                   {
                       isSentLoading && userInfo._id === currentUser._id ? <div className="flex justify-center items-center">
                       <div className="custom-spinner"></div>
