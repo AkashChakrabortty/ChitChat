@@ -5,7 +5,7 @@ export const allApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:5000/",
   }),
-  tagTypes: ['DeleteFriendReq','AcceptFriendReq','insertComment'],
+  tagTypes: ['DeleteFriendReq','AcceptFriendReq','insertComment','insertChat'],
   endpoints: (builder) => ({
     getSingleUserInfo: builder.query({
       query: (data) => ({
@@ -43,11 +43,22 @@ export const allApi = createApi({
         url:  `/getAllFriendsPosts/${data.email}`,
       }),
     }),
+    getAllFriends: builder.query({
+      query: (data) => ({
+        url:  `/getAllFriends/${data.email}`,
+      }),
+    }),
     getPostAllComments: builder.query({
       query: (data) => ({
         url:  `/getPostAllComments/${data.id}`,
       }),
       providesTags: ['insertComment']
+    }),
+    getAllChats: builder.query({
+      query: (data) => ({
+        url:  `/getAllChats/${data.id}`,
+      }),
+      providesTags: ['insertChat']
     }),
     storeUserInfo: builder.mutation({
       query: (data) => ({
@@ -77,6 +88,14 @@ export const allApi = createApi({
         body: data,
       }),
       invalidatesTags: ['insertComment']
+    }),
+    insertChats: builder.mutation({
+      query: (data) => ({
+        url: "/insertChats",
+        method: "POST",
+        body: data,
+      }),
+      invalidatesTags: ['insertChat']
     }),
     friendRequestAccept: builder.mutation({
       query: (data) => ({
@@ -112,5 +131,7 @@ export const {
   useGetSearchUsersQuery,
   useInsertCommentsMutation,
   useGetPostAllCommentsQuery,
-
+  useGetAllFriendsQuery,
+  useInsertChatsMutation,
+  useGetAllChatsQuery
 } = allApi;

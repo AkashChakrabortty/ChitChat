@@ -9,7 +9,7 @@ const PopOver = () => {
     return (
         <div className="img cursor-pointer relative" onClick={()=>setIsPopoverOpen(!isPopoverOpen)}>
         <div className="avatar ">
-          <div className="w-12 rounded-full ring ring-blue-400 ring-offset-base-100 ring-offset-2"  style={{ outlineColor: "red" }}>
+          <div className="w-12 rounded-full ring ring-blue-400 ring-offset-base-100 ring-offset-2">
             <img src={data?.profilePhoto} alt={data?.name}/>
           </div>
         </div>

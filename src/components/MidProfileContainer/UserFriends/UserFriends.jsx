@@ -1,14 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext} from 'react';
+import { useGetAllFriendsQuery } from '../../../features/api/apiSlice';
 import { UserInfo } from '../../../UserContext/AuthProvider';
 
 const UserFriends = () => {
-    const {user} = useContext(UserInfo);
-    const [data,setData] = useState([])
-   useEffect(()=>{
-    fetch(`http://localhost:5000/getAllFriends/${user?.email}`)
-    .then(res => res.json())
-    .then(data => setData(data))
-   },[user])
+  const {user} = useContext(UserInfo);
+  const {data} = useGetAllFriendsQuery({email:user?.email});
  
     return (
         <div className="sm:w-1/2 w-full mx-auto">
