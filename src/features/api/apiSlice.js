@@ -111,5 +111,5 @@ export const {
   useGetAllLikesQuery,
   useGetSearchUsersQuery,
   useInsertCommentsMutation,
-  useGetPostAllCommentsQuery
+  useGetPostAllCommentsQuery,
 } = allApi;

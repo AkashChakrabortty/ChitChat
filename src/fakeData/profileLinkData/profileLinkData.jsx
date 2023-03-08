@@ -19,7 +19,7 @@ export const profileLinkData = [
     {
         id: 3,
         icon: <AiOutlineComment />,
-        link: '/comments',
+        link: '/profile/comments',
         name: 'Comments'
     },
     {
