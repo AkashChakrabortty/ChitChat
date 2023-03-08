@@ -38,7 +38,7 @@ const CreatePost = () => {
           };
 
           //insert db
-          fetch("https://chitchat-one-pearl.vercel.app/insertPost", {
+          fetch("http://localhost:5000/insertPost", {
             method: "POST",
             headers: {
               "content-type": "application/json",

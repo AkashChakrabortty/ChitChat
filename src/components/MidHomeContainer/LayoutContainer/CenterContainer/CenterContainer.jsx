@@ -7,7 +7,7 @@ import CreatePost from '../../CreatePost/CreatePost';
 const CenterContainer = () => {
     const {user} = useContext(UserInfo)
     const {data} = useGetAllFriendsPostsQuery({email:user?.email});
-    console.log(data)
+  
     return (
         <div className='sm:w-1/2 w-full mt-3'>
          <CreatePost></CreatePost>

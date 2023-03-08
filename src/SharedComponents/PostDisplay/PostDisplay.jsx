@@ -29,7 +29,7 @@ const PostDisplay = ({data}) => {
           </div>
           <div className="reaction flex gap-5 p-2 mt-2">
            <Like post={post}/>
-           <Comment />
+           <Comment post={post}/>
           </div>
           <hr />
         </div>

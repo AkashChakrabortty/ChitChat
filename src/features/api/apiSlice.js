@@ -3,9 +3,9 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const allApi = createApi({
   reducerPath: "allApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://chitchat-one-pearl.vercel.app/",
+    baseUrl: "http://localhost:5000/",
   }),
-  tagTypes: ['DeleteFriendReq','AcceptFriendReq'],
+  tagTypes: ['DeleteFriendReq','AcceptFriendReq','insertComment'],
   endpoints: (builder) => ({
     getSingleUserInfo: builder.query({
       query: (data) => ({
@@ -43,6 +43,12 @@ export const allApi = createApi({
         url:  `/getAllFriendsPosts/${data.email}`,
       }),
     }),
+    getPostAllComments: builder.query({
+      query: (data) => ({
+        url:  `/getPostAllComments/${data.id}`,
+      }),
+      providesTags: ['insertComment']
+    }),
     storeUserInfo: builder.mutation({
       query: (data) => ({
         url: "/storeUserInfo",
@@ -63,6 +69,14 @@ export const allApi = createApi({
         method: "POST",
         body: data,
       }),
+    }),
+    insertComments: builder.mutation({
+      query: (data) => ({
+        url: "/comments",
+        method: "POST",
+        body: data,
+      }),
+      invalidatesTags: ['insertComment']
     }),
     friendRequestAccept: builder.mutation({
       query: (data) => ({
@@ -95,5 +109,7 @@ export const {
   useGetAllFriendsPostsQuery,
   useInsertLikeMutation,
   useGetAllLikesQuery,
-  useGetSearchUsersQuery
+  useGetSearchUsersQuery,
+  useInsertCommentsMutation,
+  useGetPostAllCommentsQuery
 } = allApi;
