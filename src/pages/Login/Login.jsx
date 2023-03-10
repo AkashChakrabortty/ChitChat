@@ -20,18 +20,18 @@ const Login = () => {
     return <Navigate to="/home" replace={true} />;
   }
   return (
-    <div>
-      <div className="header font-semibold text-2xl text-center -mb-28 mt-20">
-        Login now!
+    <div className="">
+      <div className="header font-semibold text-2xl text-center sm:-mb-16  sm:pt-20 pt-32">
+      Login now!
       </div>
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero bg-base-200 overflow-hidden">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 hidden lg:block h-fit">
+          <div className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 hidden lg:block h-fit sm:mt-16">
             <div className="card-body">
-              <img src={loginAnimation} alt="Login animation" className="" />
+              <img src={loginAnimation} alt="Login animation" />
             </div>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-lg bg-base-100 sm:mt-16">
             <div className="card-body p-12">
               <form onSubmit={handleSubmit}>
                 {inputData?.map((value, index) => {
