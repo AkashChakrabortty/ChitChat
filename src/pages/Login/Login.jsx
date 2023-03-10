@@ -21,14 +21,14 @@ const Login = () => {
   }
   return (
     <div className="">
-      <div className="header font-semibold text-2xl text-center sm:-mb-16  sm:pt-20 pt-32">
+      {/* <div className="header font-semibold text-2xl text-center sm:-mb-16  sm:pt-20 pt-32">
       Login now!
-      </div>
+      </div> */}
       <div className="hero bg-base-200 overflow-hidden">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 hidden lg:block h-fit sm:mt-16">
+          <div className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-lg bg-base-100 hidden lg:block h-fit sm:mt-16">
             <div className="card-body">
-              <img src={loginAnimation} alt="Login animation" />
+              <img src={loginAnimation} alt="Login animation" className="" />
             </div>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-lg bg-base-100 sm:mt-16">

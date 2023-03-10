@@ -1,5 +1,5 @@
-import React, { useContext, useEffect } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, Navigate } from "react-router-dom";
 import { inputData } from "../../fakeData/inputData/inputData";
 import { useStoreUserInfoMutation } from "../../features/api/apiSlice";
 import { UserInfo } from "../../UserContext/AuthProvider";
@@ -30,22 +30,21 @@ const Register = () => {
   }
   return (
     <div>
-      <div className="header font-semibold text-2xl text-center -mb-28 mt-20">
+      {/* <div className="header font-semibold text-2xl text-center sm:-mb-28 -mb-56  sm:pt-20 pt-32">
         Create Your Account!
-      </div>
+      </div> */}
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 hidden lg:block h-fit">
+          <div className="text-center lg:text-left card flex-shrink-0 w-full max-w-sm shadow-lg bg-base-100 hidden lg:block h-fit">
             <div className="card-body">
               <img
                 src={registerAnimation}
                 alt="Register animation"
-                className=""
               />
             </div>
           </div>
 
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 p-2">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-lg bg-base-100 p-2">
             <div className="card-body">
               <form onSubmit={handleRegister}>
                 {inputData?.map((value, index) => {
@@ -66,7 +65,7 @@ const Register = () => {
                   );
                 })}
 
-                <div className="form-control mt-1">
+                <div className="form-control mt-3">
                   <button className='btn-default' btn type="submit" style={{border: 'none'}}>
                   {
                       isLoading ? <div className="flex justify-center items-center">
