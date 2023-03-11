@@ -6,9 +6,11 @@ import { UserInfo } from "../../UserContext/AuthProvider";
 
 const Like = ({ post }) => {
   const { user } = useContext(UserInfo);
-  const [setLike, { isLoading, data }] =
+  const [setLike, { isSuccess, isLoading  ,data }] =
     useInsertLikeMutation();
   const notify = (a) => toast.success(a);
+  console.log(data)
+  console.log(isSuccess)
   const handleLike = (data) => {
     const likeInfo = {
       email: user.email,
@@ -16,14 +18,15 @@ const Like = ({ post }) => {
     };
     setLike(likeInfo);
   }; 
-  useEffect(() => {
-    if (data?.acknowledged) {
+
+  if(isSuccess){
+    if (data?.acknowledged && !isLoading) {
       notify("Liked");
     }
     else{
         notify("Already Liked");
     }
-  }, [data]);
+  }
 
   return (
     <div className="like flex gap-1 items-center text-xl cursor-pointer">

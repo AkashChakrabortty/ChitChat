@@ -29,8 +29,8 @@ const Register = () => {
     return <Navigate to="/home" replace={true} />;
   }
   return (
-    <div>
-      {/* <div className="header font-semibold text-2xl text-center sm:-mb-28 -mb-56  sm:pt-20 pt-32">
+    <div className="flex items-center h-screen">
+      {/* <div className="header font-semibold text-2xl text-center">
         Create Your Account!
       </div> */}
       <div className="hero min-h-screen bg-base-200">

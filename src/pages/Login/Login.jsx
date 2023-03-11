@@ -20,7 +20,7 @@ const Login = () => {
     return <Navigate to="/home" replace={true} />;
   }
   return (
-    <div className="">
+    <div className="flex items-center h-screen">
       {/* <div className="header font-semibold text-2xl text-center sm:-mb-16  sm:pt-20 pt-32">
       Login now!
       </div> */}
